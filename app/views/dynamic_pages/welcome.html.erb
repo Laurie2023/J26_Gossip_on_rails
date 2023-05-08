@@ -1,0 +1,16 @@
+<h3>Bienvenu.e <%= params[:user_entry].capitalize %> ! </h3>
+<p>Nous sommes particulière heureux de te retrouver !</p><br>
+
+<p>Voici la liste des gossips actuellement disponibles sur notre plateforme :</p><br>
+
+<% Gossip.all.each_with_index do |gossip, index| %>
+  <div class="card">
+  <h5 class="card-header">Titre du potin :</u> <%= gossip.title %></h5>
+  <div class="card-body">
+    <h5 class="card-title">Auteur : <%= gossip.user.first_name %></h5>
+    <a class="btn btn-primary" <%= link_to "Lire le potin !", gossip_path(gossip.id) %></a>
+  </div>
+</div>
+<br>
+<% end %>
+

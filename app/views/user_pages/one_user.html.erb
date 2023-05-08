@@ -1,0 +1,10 @@
+<h3>Page dédiée à notre ami.e n°<%= params[:id]%></h3><br>
+<p>
+  <u>Prénom :</u> <%= User.find(params[:id].to_i).first_name %><br/>
+  <u>Nom :</u> <%= User.find(params[:id].to_i).last_name %><br/><br/>
+  <u>Description :</u> <%= User.find(params[:id].to_i).description %><br/>
+  <u>Ville :</u> <%= User.find(params[:id].to_i).city.name %><br/><br/>
+  <u>Date d'inscription :</u> <%= User.find(params[:id].to_i).created_at %><br/>
+
+</p>
+

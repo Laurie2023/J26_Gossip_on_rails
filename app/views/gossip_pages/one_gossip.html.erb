@@ -1,0 +1,13 @@
+<h3>Page dédiée au gossip n°<%= params[:id]%></h3><br>
+<p>
+  <u>Auteur :</u> <%= Gossip.find(params[:id].to_i).user.first_name %>  <%= Gossip.find(params[:id].to_i).user.last_name %><br/>
+  
+  <u>Page Auteur :</u> <%= link_to "Cliques ici", user_path(Gossip.find(params[:id].to_i).user.id) %><br/><br/>
+
+  <u>Titre du potin :</u> <%= Gossip.find(params[:id].to_i).title %><br/><br/>
+  <u>Date de création :</u> <%= Gossip.find(params[:id].to_i).created_at %><br/>
+  <u>Date de la dernière mise-à-jour :</u> <%= Gossip.find(params[:id].to_i).updated_at %><br/><br/>
+  <u>Potin :</u><br/> <%= Gossip.find(params[:id].to_i).content %><br/>
+
+</p>
+
